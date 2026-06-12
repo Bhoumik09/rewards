@@ -16,14 +16,14 @@ function Stage() {
     );
   }
 
-  if (step === "error") {
-    return (
-      <div className="app-root" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh", gap: 12 }}>
-        <h1 style={{ fontSize: 20, fontWeight: 700 }}>Session Invalid</h1>
-        <p style={{ color: "var(--text-500)" }}>Your login token is missing, invalid, or expired.</p>
-      </div>
-    );
-  }
+  // if (step === "error") {
+  //   return (
+  //     <div className="app-root" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh", gap: 12 }}>
+  //       <h1 style={{ fontSize: 20, fontWeight: 700 }}>Session Invalid</h1>
+  //       <p style={{ color: "var(--text-500)" }}>Your login token is missing, invalid, or expired.</p>
+  //     </div>
+  //   );
+  // }
 
   if (step === "rewards") return <Rewards />;
   if (step === "coin-history") return <CoinHistory />;
