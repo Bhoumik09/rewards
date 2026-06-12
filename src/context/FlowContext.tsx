@@ -48,12 +48,12 @@ export function FlowProvider({ children }: { children: ReactNode }) {
       token = "dev-mock-token";
     }
 
-    if (!token) {
-      setStep("error");
-      setLoading(false);
-      return;
-    }
-    sessionStorage.setItem("sso_token", token);
+    // if (!token) {
+    //   setStep("error");
+    //   setLoading(false);
+    //   return;
+    // }
+    sessionStorage.setItem("sso_token", token!);
 
     // Clean token from URL without reload
     const url = new URL(window.location.href);
