@@ -43,7 +43,7 @@ export function FlowProvider({ children }: { children: ReactNode }) {
     let token = params.get("token") || sessionStorage.getItem("sso_token");
 
     // In dev mode, auto-inject a mock token so the app is runnable without ?token=
-    const useMocks = import.meta.env.DEV && !import.meta.env.VITE_API_BASE;
+    const useMocks = true;
     if (!token && useMocks) {
       token = "dev-mock-token";
     }
