@@ -1,0 +1,49 @@
+:root {
+  /* Brand blue scale (var names kept for diff minimality).
+     --purple-700 is the primary brand token: #0060B3. */
+  --purple-900: #042648;
+  --purple-800: #053A6D;
+  --purple-700: #0060B3;
+  --purple-600: #1E77C7;
+  --purple-500: #398ED7;
+  --purple-400: #6FA8E0;
+  --purple-100: #D6E8F7;
+  --purple-50: #EEF5FC;
+
+  --orange-600: #E5651A;
+  --orange-500: #F26C1F;
+  --orange-400: #FF8A3C;
+
+  --green-500: #1EB775;
+  --green-400: #2ECC75;
+
+  --gold-500: #F9C74F;
+  --gold-400: #FFD666;
+
+  --silver: #C7C7C7;
+  --bronze: #E39A4A;
+
+  --text-900: #1A1A1A;
+  --text-700: #3E3E3E;
+  --text-500: #6F6F6F;
+  --text-400: #9A9A9A;
+
+  --bg-gray: #F1F1F3;
+  --bg-white: #FFFFFF;
+
+  --border-soft: #E5E5E5;
+  --border-mid: #D2D2D8;
+
+  --radius-sm: 8px;
+  --radius-cta: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 6px rgba(34, 14, 80, 0.06);
+  --shadow-md: 0 6px 20px rgba(34, 14, 80, 0.10);
+  --shadow-lg: 0 16px 40px rgba(34, 14, 80, 0.18);
+
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}

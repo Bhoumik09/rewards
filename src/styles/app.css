@@ -1,0 +1,602 @@
+/* =================================================================
+   Minimal app.css — Refer & Earn trimmed to two flows:
+   1. Refer page  2. Rewards page (+ Coin history)
+   ================================================================= */
+
+.app-root {
+  font-family: var(--font-sans);
+  background: #e9e8ed;
+  min-height: 100vh;
+  color: var(--text-900);
+}
+
+/* ---------- Header ---------- */
+.app-header {
+  background: #fff;
+  height: 56px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ececec;
+  position: relative;
+  z-index: 10;
+}
+.app-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--purple-800);
+}
+.app-header__logo-mark {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--purple-700);
+  border-radius: 50%;
+  color: var(--purple-800);
+  font-weight: 800;
+  font-size: 11px;
+}
+.app-header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.app-header__greeting {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-700);
+}
+.app-header__coins {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: #FFF6E0;
+  border: 1px solid #FBE2A1;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7a4710;
+  cursor: pointer;
+}
+.app-header__coins:hover { background: #FFEEC2; }
+
+/* ---------- Referral form ---------- */
+.referral-form {
+  padding: 24px 20px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.referral-form__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.referral-form__desc {
+  font-size: 14px;
+  color: var(--text-500);
+  margin: 0 0 16px;
+}
+.referral-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.referral-form__fields input {
+  padding: 12px 14px;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  width: 100%;
+}
+.referral-form__fields input:focus {
+  border-color: var(--purple-600);
+  box-shadow: 0 0 0 3px rgba(0, 96, 179, 0.12);
+}
+.referral-form__success {
+  text-align: center;
+  padding: 32px 0;
+}
+.referral-form__success h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green-500);
+  margin: 0 0 8px;
+}
+.referral-form__success p {
+  font-size: 14px;
+  color: var(--text-500);
+  margin: 0 0 16px;
+}
+
+/* ---------- Share link ---------- */
+.share-link {
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 18px 20px 20px;
+  margin: 0 20px 18px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.share-link__head h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-900);
+  margin-bottom: 4px;
+}
+.share-link__head p {
+  font-size: 13px;
+  color: var(--text-500);
+  line-height: 1.5;
+}
+.share-link__copy {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  background: var(--purple-50);
+  border: 1px solid var(--purple-100);
+  border-radius: var(--radius-cta);
+  padding: 4px;
+}
+.share-link__copy input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--purple-800);
+  padding: 6px 10px;
+  font-weight: 500;
+}
+.share-link__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--purple-700);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-cta);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 150ms ease;
+}
+.share-link__copy-btn:hover { background: var(--purple-800); }
+.share-link__copy-btn.is-copied { background: var(--green-500); }
+.share-link__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-cta);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.share-link__icon-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.share-link__icon-btn--whatsapp { background: #25D366; color: #fff; }
+.share-link__icon-btn--sms { background: var(--purple-700); color: #fff; }
+
+/* ---------- Refer page redeem CTA ---------- */
+.refer-redeem {
+  text-align: center;
+  padding: 0 20px 32px;
+}
+
+/* ---------- Plans section ---------- */
+.plans {
+  background: #F5F8FC;
+  padding: 36px 20px;
+}
+.plans__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.plans__head {
+  margin-bottom: 20px;
+}
+.plans__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0B0F1A;
+  margin: 0 0 6px;
+}
+.plans__title b { color: #0060B3; }
+.plans__sub {
+  font-size: 14px;
+  color: #475569;
+  margin: 0;
+  max-width: 540px;
+}
+.plans__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Plan card */
+.plan-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #E2E7EE;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 0 rgba(11, 15, 26, 0.02);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.plan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(11, 15, 26, 0.08);
+}
+.plan-card--blue  { border-top: 3px solid #0060B3; }
+.plan-card--violet { border-top: 3px solid #6E3BAE; }
+.plan-card--teal  { border-top: 3px solid #0F9D89; }
+.plan-card--amber { border-top: 3px solid #E2951B; }
+
+.plan-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.plan-card__reward {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #FFF6E0;
+  color: #7a4710;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #FBE2A1;
+}
+.plan-card__badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.plan-card__badge--popular { background: #EEF5FC; color: #0060B3; }
+.plan-card__badge--best-value { background: #F0E8FA; color: #6E3BAE; }
+.plan-card__badge--new { background: #E0F5EF; color: #0F9D89; }
+.plan-card__name { font-size: 17px; font-weight: 700; color: #0B0F1A; margin: 4px 0 0; }
+.plan-card__tagline { font-size: 13px; color: #64748B; margin: 0; }
+.plan-card__cover {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0060B3;
+  background: #EEF5FC;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  align-self: flex-start;
+}
+.plan-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.plan-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #334155;
+}
+.plan-card__list svg { color: #0F9D89; flex: 0 0 auto; }
+.plan-card__foot {
+  margin-top: auto;
+  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.plan-card__price strong { font-size: 18px; font-weight: 800; color: #0B0F1A; }
+.plan-card__price span { font-size: 12px; color: #64748B; margin-left: 2px; }
+.plan-card__cta { padding: 8px 16px; font-size: 13px; }
+
+/* ---------- Rewards page ---------- */
+.rewards-page__topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #fff;
+  border-bottom: 1px solid #EEF0F4;
+}
+.rewards-page__topbar h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0B0F1A;
+  margin: 0;
+}
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  color: var(--text-700);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.icon-btn:hover { background: var(--purple-50); color: var(--purple-700); }
+
+.rewards-balance {
+  background: linear-gradient(180deg, #053A6D 0%, #0060B3 100%);
+  color: #fff;
+  padding: 22px 20px 28px;
+}
+.rewards-balance__label {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.rewards-balance__value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.rewards-balance__value span {
+  font-size: 36px;
+  font-weight: 800;
+  color: #FFB84F;
+  line-height: 1;
+}
+.rewards-balance__value small {
+  font-size: 13px;
+  font-weight: 600;
+  color: #E2951B;
+  margin-left: 2px;
+}
+.rewards-balance__history {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #042648;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rewards-balance__history:hover { background: #06305B; }
+
+.rewards-section {
+  padding: 22px 20px 8px;
+}
+.rewards-section h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0B0F1A;
+  margin: 0 0 14px;
+}
+
+/* Voucher grid */
+.voucher-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.voucher-card {
+  position: relative;
+  padding: 14px 16px 16px;
+  border-radius: 14px;
+  border: 1px solid #E2E7EE;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.voucher-card__badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #EEF0F4;
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  align-self: flex-start;
+}
+.voucher-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0B0F1A;
+  margin: 0;
+}
+.voucher-card__cost {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange-500);
+  margin-bottom: 6px;
+}
+.voucher-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #0060B3;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
+}
+.voucher-card__cta:disabled {
+  color: var(--text-400);
+  cursor: not-allowed;
+}
+
+/* ---------- Redeem modal ---------- */
+.consent-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 38, 72, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+.redeem-modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.redeem-modal h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.redeem-modal p {
+  font-size: 14px;
+  color: var(--text-700);
+  margin: 0 0 8px;
+}
+.redeem-modal__code {
+  font-size: 16px;
+  color: var(--green-500);
+}
+.redeem-modal__expiry {
+  font-size: 13px;
+  color: var(--text-500);
+  margin-bottom: 16px !important;
+}
+.redeem-modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* ---------- Coin history ---------- */
+.coin-history {
+  padding: 16px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.coin-history__summary {
+  background: linear-gradient(135deg, #0060B3 0%, #053A6D 100%);
+  color: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0, 96, 179, 0.22);
+}
+.coin-history__summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.coin-history__summary-item span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.coin-history__summary-item b {
+  font-size: 26px;
+  font-weight: 800;
+}
+.coin-history__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.coin-history__row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+.coin-history__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+.coin-history__icon--earn { background: rgba(15, 157, 137, 0.12); color: #0F9D89; }
+.coin-history__icon--spend { background: rgba(220, 38, 38, 0.10); color: #DC2626; }
+.coin-history__body { min-width: 0; }
+.coin-history__title { font-size: 14px; font-weight: 700; color: #0B0F1A; line-height: 1.3; }
+.coin-history__meta { text-align: right; display: flex; flex-direction: column; gap: 2px; }
+.coin-history__amount { font-size: 15px; font-weight: 800; }
+.coin-history__amount--earn { color: #0F9D89; }
+.coin-history__amount--spend { color: #DC2626; }
+.coin-history__date { font-size: 11px; color: #94A3B8; }
+
+/* ---------- Mobile refinements ---------- */
+@container app (max-width: 640px) {
+  .app-header { padding: 0 16px; height: 52px; }
+  .app-header__logo { font-size: 18px; }
+  .app-header__greeting { font-size: 13px; }
+  .referral-form { padding: 20px 16px; }
+  .share-link { margin: 0 16px 16px; padding: 16px; }
+  .share-link__copy input { font-size: 12px; }
+  .share-link__copy-btn { padding: 8px 10px; }
+  .share-link__icon-btn { width: 32px; height: 32px; }
+  .plans { padding: 28px 16px; }
+  .plans__title { font-size: 20px; }
+  .plans__grid { grid-template-columns: 1fr; }
+  .plan-card { padding: 16px; }
+  .rewards-page__topbar { padding: 12px 16px; }
+  .rewards-balance { padding: 18px 16px 22px; }
+  .rewards-balance__value span { font-size: 32px; }
+  .rewards-section { padding: 18px 16px 6px; }
+  .voucher-grid { grid-template-columns: 1fr; }
+  .coin-history { padding: 12px 14px 60px; }
+  .consent-backdrop { padding: 16px; align-items: flex-end; }
+  .redeem-modal { border-radius: 22px 22px 0 0; max-width: none; }
+}
